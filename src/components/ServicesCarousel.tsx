@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -53,6 +53,9 @@ export default function ServicesCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [direction, setDirection] = useState<"left" | "right">("right");
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
   const nextSlide = useCallback(() => {
     setDirection("right");
@@ -67,6 +70,35 @@ export default function ServicesCarousel() {
   const goToSlide = (index: number) => {
     setDirection(index > currentIndex ? "right" : "left");
     setCurrentIndex(index);
+  };
+
+  // Touch handlers for swipe navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    setIsAutoPlaying(false);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setIsAutoPlaying(true);
   };
 
   useEffect(() => {
@@ -97,7 +129,13 @@ export default function ServicesCarousel() {
           onMouseLeave={() => setIsAutoPlaying(true)}
         >
           {/* Main Carousel */}
-          <div className="relative h-[500px] sm:h-[550px] lg:h-[600px] rounded-3xl overflow-hidden">
+          <div
+            ref={carouselRef}
+            className="relative h-[500px] sm:h-[550px] lg:h-[600px] rounded-3xl overflow-hidden touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {services.map((service, index) => (
               <div
                 key={service.title}
