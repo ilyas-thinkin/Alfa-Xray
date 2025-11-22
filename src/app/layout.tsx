@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Alfa X-Ray Technical Service",
-  description: "Precision Safety. Engineered Health.",
+  description: "Precision Safety. Engineered Health. Leading radiation protection company in UAE specializing in medical infrastructure solutions.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
