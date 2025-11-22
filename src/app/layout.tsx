@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   title: "Alfa X-Ray Technical Service",
   description: "Precision Safety. Engineered Health. Leading radiation protection company in UAE specializing in medical infrastructure solutions.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/Alfa Al Hayat.png", type: "image/png" },
+    ],
+    apple: "/images/Alfa Al Hayat.png",
+    shortcut: "/favicon.ico",
   },
 };
 
