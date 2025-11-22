@@ -115,8 +115,8 @@ export default function Navbar() {
             isScrolled ? "bg-transparent" : "bg-white/90 backdrop-blur-md shadow-sm border border-slate-200/50"
           }`}>
             <Image
-              src="/images/logo nav.png"
-              alt="Alfa Xray Technical Service"
+              src="/images/Alfa Al Hayat.png"
+              alt="Alfa Al Hayat"
               width={180}
               height={60}
               className="h-10 w-auto"

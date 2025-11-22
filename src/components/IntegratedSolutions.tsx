@@ -116,7 +116,7 @@ export default function IntegratedSolutions() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section ref={sectionRef} id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 via-green-100/50 to-emerald-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className={`flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 gap-8 transition-all duration-1000 ease-out
@@ -127,20 +127,20 @@ export default function IntegratedSolutions() {
               <span className="text-slate-800">INTEGRATED </span>
               <span className="text-green-600">SOLUTIONS</span>
             </h2>
-            <p className={`mt-6 text-lg text-slate-600 leading-relaxed transition-all duration-700 delay-200
+            <p className={`mt-6 text-lg text-slate-700 leading-relaxed transition-all duration-700 delay-200
               ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
               We specialize in end-to-end medical infrastructure, delivering sterile, safe, and efficient environments.
             </p>
           </div>
           <a
             href="#catalog"
-            className={`group inline-flex items-center gap-3 px-8 py-4 bg-white rounded-full shadow-sm border border-slate-200 hover:shadow-md hover:border-slate-300 transition-all duration-500
+            className={`group inline-flex items-center gap-3 px-8 py-4 bg-white rounded-full shadow-md border border-green-200 hover:shadow-lg hover:border-green-300 transition-all duration-500
               ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
             style={{ transitionDelay: "300ms" }}
           >
-            <span className="text-sm font-semibold text-slate-700 uppercase tracking-wide">View Full Catalog</span>
+            <span className="text-sm font-semibold text-green-700 uppercase tracking-wide">View Full Catalog</span>
             <svg
-              className="w-4 h-4 text-slate-400 group-hover:text-green-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+              className="w-4 h-4 text-green-500 group-hover:text-green-600 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -162,41 +162,22 @@ export default function IntegratedSolutions() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Card */}
+              {/* Card - Green by default, White on hover */}
               <div
                 className={`relative h-full p-6 rounded-3xl border transition-all duration-500 cursor-pointer overflow-hidden
                   ${hoveredIndex === index
-                    ? "bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl border-green-200 shadow-2xl shadow-green-500/10 scale-[1.02] -translate-y-2"
-                    : "bg-white/60 backdrop-blur-md border-slate-200/50 shadow-lg shadow-slate-200/50"
+                    ? "bg-white border-white shadow-2xl shadow-green-500/20 scale-[1.02] -translate-y-2"
+                    : "bg-gradient-to-br from-green-500/10 to-green-600/10 border-green-200/50 shadow-lg"
                   }`}
               >
-                {/* Animated background gradient */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-green-600/5 opacity-0 transition-opacity duration-500
-                    ${hoveredIndex === index ? "opacity-100" : ""}`}
-                />
-
-                {/* Pulse ring effect on hover */}
-                <div
-                  className={`absolute -inset-1 rounded-3xl bg-gradient-to-r from-green-500/20 to-green-600/20 blur-xl transition-opacity duration-500
-                    ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
-                />
-
-                {/* Shimmer effect on entrance */}
-                <div
-                  className={`absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-out
-                    ${animatedCards[index] ? "translate-x-full" : "-translate-x-full"}`}
-                  style={{ transitionDelay: `${index * 100 + 200}ms` }}
-                />
-
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
                   <div
-                    className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-5 transition-all duration-200
+                    className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-5 transition-all duration-300
                       ${hoveredIndex === index
-                        ? "bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg shadow-green-500/30 rotate-6 scale-110"
-                        : "bg-slate-100 text-slate-600"
+                        ? "bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg shadow-green-500/30"
+                        : "bg-white/80 text-green-600"
                       }`}
                   >
                     {service.icon}
@@ -211,18 +192,19 @@ export default function IntegratedSolutions() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  <p className={`text-sm leading-relaxed mb-4 transition-all duration-300
+                    ${hoveredIndex === index ? "text-slate-600" : "text-slate-700"}`}>
                     {service.description}
                   </p>
 
                   {/* Learn More Link */}
                   <div
                     className={`flex items-center gap-2 text-sm font-medium transition-all duration-300
-                      ${hoveredIndex === index ? "text-green-600 translate-x-2" : "text-slate-400"}`}
+                      ${hoveredIndex === index ? "text-green-600 translate-x-2" : "text-green-700"}`}
                   >
                     <span>Learn more</span>
                     <svg
-                      className={`w-4 h-4 transition-all duration-300 ${hoveredIndex === index ? "translate-x-1 opacity-100" : "opacity-50"}`}
+                      className={`w-4 h-4 transition-all duration-300 ${hoveredIndex === index ? "translate-x-1" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -232,16 +214,7 @@ export default function IntegratedSolutions() {
                   </div>
                 </div>
 
-                {/* Corner accent */}
-                <div
-                  className={`absolute top-0 right-0 w-20 h-20 transition-all duration-500
-                    ${hoveredIndex === index ? "opacity-100" : "opacity-0"}`}
-                >
-                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-green-500/50 animate-ping" />
-                </div>
-
-                {/* Bottom accent line */}
+                {/* Bottom accent line - visible on hover */}
                 <div
                   className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-green-600 transition-all duration-500 origin-left
                     ${hoveredIndex === index ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}`}
