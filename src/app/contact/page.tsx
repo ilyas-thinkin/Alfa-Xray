@@ -70,6 +70,7 @@ const socialLinks = [
 
 export default function ContactPage() {
   const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const whatsappNumber = "966567169966";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -91,11 +92,28 @@ export default function ContactPage() {
     }));
   };
 
+  const openWhatsApp = (url: string) => {
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+    if (!win) {
+      window.location.href = url;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const message = [
+      "New enquiry via Contact page:",
+      `Name: ${formData.name || "N/A"}`,
+      `Email: ${formData.email || "N/A"}`,
+      `Phone: ${formData.phone || "N/A"}`,
+      `Subject: ${formData.subject || "N/A"}`,
+      `Message: ${formData.message || "N/A"}`,
+    ].join("\n");
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    openWhatsApp(url);
+
     setIsSubmitting(false);
     setSubmitted(true);
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
@@ -338,21 +356,21 @@ export default function ContactPage() {
                     >
                       {isSubmitting ? (
                         <>
-                          <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                          </svg>
-                          <span>Sending...</span>
-                        </>
-                      ) : (
-                        <>
-                          <span>Send Message</span>
-                          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </>
-                      )}
-                    </button>
+                    <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                    </svg>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                      <path d="M16 3C9.373 3 4 8.206 4 14.635c0 2.37.803 4.57 2.181 6.36L4 29l8.263-2.61A12.73 12.73 0 0016 26c6.627 0 12-5.206 12-11.635C28 8.206 22.627 3 16 3zm0 21.36c-1.238 0-2.444-.21-3.583-.625l-.257-.092-4.912 1.551 1.573-4.596-.167-.218A9.26 9.26 0 016.5 14.635C6.5 9.495 10.76 5.5 16 5.5s9.5 3.995 9.5 9.135-4.26 9.725-9.5 9.725zm5.056-7.199c-.277-.139-1.637-.807-1.89-.9-.254-.093-.44-.139-.627.14-.186.278-.72.9-.882 1.085-.162.186-.324.209-.6.07-.277-.14-1.17-.426-2.23-1.358-.824-.723-1.379-1.617-1.541-1.895-.162-.278-.017-.429.123-.568.127-.126.278-.325.416-.487.139-.163.185-.279.278-.465.093-.186.046-.349-.023-.488-.07-.14-.627-1.508-.86-2.065-.226-.54-.456-.467-.627-.475-.162-.007-.349-.009-.536-.009a1.033 1.033 0 00-.747.349c-.255.278-.976.953-.976 2.323 0 1.37 1 2.693 1.138 2.88.139.186 1.966 3.133 4.76 4.266.665.287 1.183.457 1.586.585.666.212 1.272.183 1.75.111.533-.08 1.637-.667 1.87-1.312.231-.646.231-1.199.162-1.313-.069-.116-.255-.186-.533-.325z" />
+                    </svg>
+                    <span>Send via WhatsApp</span>
+                  </>
+                )}
+              </button>
                   </form>
                 )}
               </div>
