@@ -81,6 +81,15 @@ export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
+  // Reset scroll state when pathname changes (navigation occurs)
+  useEffect(() => {
+    setLastScrollY(0);
+    setScrollProgress(0);
+    setIsNavbarVisible(true);
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+  }, [pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -303,6 +312,7 @@ export default function Navbar() {
           <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-sm border border-slate-200/50 p-2">
             <Link
               href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`block px-4 py-3 text-sm font-medium rounded-xl transition-colors ${
                 isActive("/")
                   ? "text-green-600 bg-green-50"
@@ -342,6 +352,7 @@ export default function Navbar() {
                     <Link
                       key={service.href}
                       href={service.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
                       className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-colors ${
                         pathname === service.href
                           ? "text-green-600 bg-green-50"
@@ -358,6 +369,7 @@ export default function Navbar() {
 
             <Link
               href="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`block px-4 py-3 text-sm font-medium rounded-xl transition-colors ${
                 isActive("/about")
                   ? "text-green-600 bg-green-50"
@@ -368,6 +380,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className={`block px-4 py-3 text-sm font-medium rounded-xl transition-colors ${
                 isActive("/contact")
                   ? "text-green-600 bg-green-50"
@@ -380,6 +393,7 @@ export default function Navbar() {
             <div className="h-px bg-slate-100 my-2"></div>
             <Link
               href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
               className="block w-full px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-green-500 to-green-600 rounded-xl shadow-md"
             >
               Get Quote
