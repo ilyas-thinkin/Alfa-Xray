@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ContactFormPopup from "./ContactFormPopup";
 
 interface ServiceItem {
   title: string;
@@ -70,6 +71,7 @@ export default function ServicePageTemplate({
   const [isHeroVisible, setIsHeroVisible] = useState(false);
   const [isServicesVisible, setIsServicesVisible] = useState(false);
   const [isFAQVisible, setIsFAQVisible] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
@@ -160,15 +162,15 @@ export default function ServicePageTemplate({
           <div className={`flex flex-wrap gap-4 transition-all duration-700 delay-400 ${
             isHeroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}>
-            <Link
-              href="/contact"
+            <button
+              onClick={() => setIsContactFormOpen(true)}
               className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-full shadow-lg shadow-green-500/30 hover:shadow-xl transition-all duration-300"
             >
               <span>Get a Quote</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
+            </button>
             <a
               href="mailto:info@alfaalhayat.com"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300"
@@ -315,6 +317,12 @@ export default function ServicePageTemplate({
           </div>
         </div>
       </section>
+
+      {/* Contact Form Popup */}
+      <ContactFormPopup
+        isOpen={isContactFormOpen}
+        onClose={() => setIsContactFormOpen(false)}
+      />
     </div>
   );
 }

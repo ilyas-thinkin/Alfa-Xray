@@ -296,12 +296,6 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-green-500 rounded-full" />
                 )}
               </Link>
-              <Link
-                href="/contact"
-                className="ml-2 px-7 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 rounded-full shadow-sm transition-all duration-200"
-              >
-                Get Quote
-              </Link>
             </div>
           </div>
 
@@ -422,14 +416,6 @@ export default function Navbar() {
               Contact
             </Link>
 
-            <div className="h-px bg-slate-100 my-2"></div>
-            <Link
-              href="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full px-4 py-3 text-sm font-semibold text-white text-center bg-gradient-to-r from-green-500 to-green-600 rounded-xl shadow-md"
-            >
-              Get Quote
-            </Link>
           </div>
         </div>
       </nav>
