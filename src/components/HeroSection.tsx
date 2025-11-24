@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,8 +32,12 @@ export default function HeroSection() {
   };
 
   const closeForm = () => {
-    setIsContactFormOpen(false);
-    setSubmitted(false);
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsContactFormOpen(false);
+      setIsClosing(false);
+      setSubmitted(false);
+    }, 200);
   };
 
   return (
@@ -88,12 +93,12 @@ export default function HeroSection() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className={`absolute inset-0 bg-black/50 backdrop-blur-sm ${isClosing ? 'modal-backdrop-exit' : 'modal-backdrop-enter'}`}
             onClick={closeForm}
           />
 
           {/* Form Modal */}
-          <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto animate-in fade-in zoom-in duration-300">
+          <div className={`relative bg-white rounded-3xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto ${isClosing ? 'modal-content-exit' : 'modal-content-enter'}`}>
             {/* Close Button */}
             <button
               onClick={closeForm}
