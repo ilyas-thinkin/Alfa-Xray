@@ -81,6 +81,7 @@ export default function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const DROPDOWN_CLOSE_DELAY = 500;
 
   // Handle dropdown open with delay for better UX
   const handleDropdownEnter = () => {
@@ -94,7 +95,7 @@ export default function Navbar() {
   const handleDropdownLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 150); // 150ms delay before closing
+    }, DROPDOWN_CLOSE_DELAY); // small delay to allow cursor to reach dropdown
   };
 
   // Cleanup timeout on unmount
@@ -227,12 +228,17 @@ export default function Navbar() {
                   </svg>
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - positioned with invisible bridge for better hover UX */}
                 <div
-                  className={`absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 origin-top ${
-                    isServicesOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                  onMouseEnter={handleDropdownEnter}
+                  onMouseLeave={handleDropdownLeave}
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-300 ${
+                    isServicesOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                   }`}
                 >
+                  <div className={`w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 origin-top ${
+                    isServicesOpen ? "scale-100 translate-y-0" : "scale-95 -translate-y-2"
+                  }`}>
                   <div className="p-2">
                     {services.map((service) => (
                       <Link
@@ -259,6 +265,7 @@ export default function Navbar() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </Link>
+                  </div>
                   </div>
                 </div>
               </div>
