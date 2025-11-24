@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const groupCompanies = [
   {
     number: "01",
-    title: "Alfa X-Ray Technical LLC",
+    title: "ALFA AL HAYAT Co. LTD.",
     description: "The core division specializing in radiation safety and technical services.",
   },
   {
@@ -172,14 +172,14 @@ export default function AboutPage() {
             <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 transition-all duration-700 delay-200 ${
               isHeroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              About <span className="text-green-400">ALFA XRAY</span>
+              About <span className="text-green-400">ALFA AL HAYAT</span>
             </h1>
 
             {/* Description */}
             <p className={`text-lg sm:text-xl text-white/80 leading-relaxed mb-8 transition-all duration-700 delay-300 ${
               isHeroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
-              Welcome to ALFA XRAY TECHNICAL SERVICE LLC! We are a leading radiation protection company based in the UAE,
+              Welcome to ALFA AL HAYAT Co. LTD.! We are a leading radiation protection company based in Saudi Arabia,
               dedicated to ensuring the safety and well-being of our clients. With years of expertise in the field,
               we specialize in designing, installing, and maintaining state-of-the-art radiation protection solutions.
             </p>
@@ -217,7 +217,7 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mt-4 mb-4">Our Mission</h2>
               <p className="text-slate-600 leading-relaxed">
-                To provide exceptional radiation protection solutions, customized to meet the unique needs of our clients in the UAE.
+                To provide exceptional radiation protection solutions, customized to meet the unique needs of our clients in Saudi Arabia.
                 We focus on delivering innovative, reliable, and cost-effective services while establishing industry standards for
                 safety and quality in radiation protection.
               </p>
@@ -427,13 +427,13 @@ export default function AboutPage() {
               </svg>
             </Link>
             <a
-              href="tel:+971507889195"
+              href="mailto:info@alfaalhayat.com"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span>Call Now</span>
+              <span>Email Us</span>
             </a>
           </div>
         </div>

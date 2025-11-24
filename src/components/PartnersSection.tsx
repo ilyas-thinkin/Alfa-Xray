@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react";
 const partners = [
   {
     number: "01",
-    name: "Alfa X-Ray Technical LLC",
+    name: "ALFA AL HAYAT Co. LTD.",
     description: "The core division specializing in radiation safety and technical services.",
   },
   {
     number: "02",
-    name: "Alfaco Metallic UAE",
+    name: "Alfaco Metallic",
     description: "Dedicated manufacturing and supply of metallic structural components.",
   },
   {

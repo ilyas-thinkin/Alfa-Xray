@@ -45,7 +45,7 @@ export default function AboutSection() {
 
             {/* Description */}
             <p className={`text-lg text-slate-600 leading-relaxed mb-8 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-              Welcome to <span className="font-semibold text-slate-800">ALFA XRAY TECHNICAL SERVICE LLC!</span> We are a leading radiation protection company based in the UAE, dedicated to ensuring the safety and well-being of our clients. With years of expertise in the field, we specialize in designing, installing, and maintaining state-of-the-art radiation protection solutions.
+              Welcome to <span className="font-semibold text-slate-800">ALFA AL HAYAT Co. LTD.!</span> We are a leading radiation protection company based in Saudi Arabia, dedicated to ensuring the safety and well-being of our clients. With years of expertise in the field, we specialize in designing, installing, and maintaining state-of-the-art radiation protection solutions.
             </p>
 
             {/* CTA Button */}
@@ -88,7 +88,7 @@ export default function AboutSection() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800">Based in UAE</h4>
+                      <h4 className="font-bold text-slate-800">Based in Saudi Arabia</h4>
                       <p className="text-sm text-slate-500">Serving the Middle East region</p>
                     </div>
                   </div>

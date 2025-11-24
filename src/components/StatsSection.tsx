@@ -141,7 +141,7 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    <section ref={sectionRef} className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (

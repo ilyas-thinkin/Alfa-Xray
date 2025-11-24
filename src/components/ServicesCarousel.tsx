@@ -7,7 +7,7 @@ import Link from "next/link";
 const services = [
   {
     title: "Radiation Protection",
-    description: "ALFA XRAY implements and installs a full line of shielding products thus offering quality line of radiation protection to ensure that radiology and radiotherapy staff.",
+    description: "ALFA AL HAYAT implements and installs a full line of shielding products thus offering quality line of radiation protection to ensure that radiology and radiotherapy staff.",
     image: "/images/radiology protection.jpg",
     href: "/services/radiation-protection",
   },
@@ -109,7 +109,7 @@ export default function ServicesCarousel() {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -131,7 +131,7 @@ export default function ServicesCarousel() {
           {/* Main Carousel */}
           <div
             ref={carouselRef}
-            className="relative h-[500px] sm:h-[550px] lg:h-[600px] rounded-3xl overflow-hidden touch-pan-y"
+            className="relative h-[400px] sm:h-[450px] lg:h-[500px] rounded-3xl overflow-hidden touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -241,15 +241,15 @@ export default function ServicesCarousel() {
           </div>
 
           {/* Thumbnail Preview */}
-          <div className="hidden lg:flex items-center justify-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-2 sm:gap-4 lg:gap-6 mt-6 sm:mt-8 overflow-x-auto pb-2 px-2">
             {services.map((service, index) => (
               <button
                 key={service.title}
                 onClick={() => goToSlide(index)}
-                className="group flex flex-col items-center gap-2"
+                className="group flex flex-col items-center gap-1 sm:gap-2 flex-shrink-0"
               >
                 <div
-                  className={`relative w-24 h-16 rounded-xl overflow-hidden transition-all duration-300
+                  className={`relative w-16 h-12 sm:w-20 sm:h-14 lg:w-24 lg:h-16 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300
                     ${index === currentIndex
                       ? "ring-2 ring-green-500 ring-offset-2 scale-110"
                       : "opacity-60 group-hover:opacity-100"
@@ -266,7 +266,7 @@ export default function ServicesCarousel() {
                   />
                 </div>
                 <span
-                  className={`text-xs font-medium w-24 text-center leading-tight transition-colors duration-300
+                  className={`text-[10px] sm:text-xs font-medium w-16 sm:w-20 lg:w-24 text-center leading-tight transition-colors duration-300
                     ${index === currentIndex ? "text-green-600" : "text-slate-400 group-hover:text-slate-600"}`}
                 >
                   {service.title}

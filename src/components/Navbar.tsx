@@ -78,16 +78,38 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const heroHeight = window.innerHeight;
+
       // Calculate scroll progress from 0 to 1 over first 100px
-      const progress = Math.min(window.scrollY / 100, 1);
+      const progress = Math.min(currentScrollY / 100, 1);
       setScrollProgress(progress);
+
+      // Only apply hide/show behavior after passing hero section
+      if (currentScrollY > heroHeight) {
+        // Scrolling up - show navbar
+        if (currentScrollY < lastScrollY) {
+          setIsNavbarVisible(true);
+        }
+        // Scrolling down - hide navbar
+        else if (currentScrollY > lastScrollY && currentScrollY > heroHeight + 100) {
+          setIsNavbarVisible(false);
+        }
+      } else {
+        // Always show navbar in hero section
+        setIsNavbarVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const isScrolled = scrollProgress > 0.1;
 
@@ -101,11 +123,12 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed w-full top-0 left-0 z-50 transition-all duration-500 ease-out"
+      className="fixed w-full top-0 left-0 z-50 transition-all duration-300 ease-out"
       style={{
         padding: `${20 - scrollProgress * 8}px 0`,
         backgroundColor: `rgba(255, 255, 255, ${scrollProgress})`,
         boxShadow: scrollProgress > 0.5 ? `0 1px 3px rgba(0, 0, 0, ${scrollProgress * 0.1})` : 'none',
+        transform: isNavbarVisible ? 'translateY(0)' : 'translateY(-100%)',
       }}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
