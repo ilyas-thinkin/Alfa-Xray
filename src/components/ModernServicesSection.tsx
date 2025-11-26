@@ -8,7 +8,7 @@ const services = [
   {
     title: "Radiation Protection",
     description: "Advanced shielding solutions ensuring safety from harmful radiation exposure in medical and industrial environments.",
-    image: "/images/radiology protection.jpg",
+    image: "/images/Radiation.jpeg",
     href: "/services/radiation-protection",
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
