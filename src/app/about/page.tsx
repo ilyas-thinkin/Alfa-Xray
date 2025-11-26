@@ -8,28 +8,33 @@ import ContactFormPopup from "@/components/ContactFormPopup";
 const groupCompanies = [
   {
     number: "01",
-    title: "ALFA AL HAYAT Co. LTD.",
-    description: "The core division specializing in radiation safety and technical services.",
+    title: "ALFA X-Ray Technical LLC",
+    description: "Premier provider of advanced radiation protection solutions, specializing in the design, installation, and maintenance of comprehensive shielding systems for medical, industrial, and research facilities across the region.",
   },
   {
     number: "02",
-    title: "Alfaco Metallic UAE",
-    description: "Dedicated manufacturing and supply of metallic structural components.",
+    title: "ALFA AL HAYAT Co. LTD",
+    description: "Leading provider of integrated healthcare solutions and medical infrastructure services.",
   },
   {
     number: "03",
-    title: "Alfaco Interiors",
-    description: "Focusing on high-standard medical and commercial interior fit-outs.",
+    title: "ALFCO Metallics",
+    description: "Dedicated manufacturing and supply of high-quality metallic structural components and assemblies.",
   },
   {
     number: "04",
-    title: "Alfaco Modular System",
-    description: "Custom modular solutions for efficient space utilization in healthcare facilities.",
+    title: "ALFCO Interiors",
+    description: "Focusing on high-standard medical and commercial interior fit-outs with innovative design solutions.",
   },
   {
     number: "05",
+    title: "ALFCO Modular System",
+    description: "Custom modular solutions for efficient space utilization in healthcare facilities and beyond.",
+  },
+  {
+    number: "06",
     title: "New Hail Switch Gear LLC",
-    description: "Providing specialized electrical and switchgear solutions for critical systems.",
+    description: "Providing specialized electrical and switchgear solutions for critical systems and infrastructure.",
   },
 ];
 
@@ -254,7 +259,7 @@ export default function AboutPage() {
             isGroupVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4">
-              <span className="text-slate-800">OUR </span>
+              <span className="text-slate-800">ALFCO </span>
               <span className="text-green-600">GROUP</span>
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">

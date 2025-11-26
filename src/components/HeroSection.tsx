@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-white/50 -z-5"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center text-white mt-8 sm:mt-0 px-2">
+      <div className="relative z-10 max-w-5xl mx-auto text-center text-white mt-16 sm:mt-24 lg:mt-32 px-2">
         <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
           <span className="text-black">Precision Safety.</span>{" "}
           <span className="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">

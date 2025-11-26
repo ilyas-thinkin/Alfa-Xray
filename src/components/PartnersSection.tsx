@@ -1,32 +1,44 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const partners = [
   {
     number: "01",
-    name: "ALFA AL HAYAT Co. LTD.",
-    description: "The core division specializing in radiation safety and technical services.",
+    name: "ALFA X-Ray Technical LLC",
+    description: "Premier provider of advanced radiation protection solutions for medical, industrial, and research facilities.",
+    logo: "/images/alfaco group/ALFA XRay Logo.png",
   },
   {
     number: "02",
-    name: "Alfaco Metallic",
-    description: "Dedicated manufacturing and supply of metallic structural components.",
+    name: "ALFA AL HAYAT Co. LTD",
+    description: "Leading provider of integrated healthcare solutions and medical infrastructure services.",
+    logo: "/images/alfaco group/Alfa Al Hayat.png",
   },
   {
     number: "03",
-    name: "Alfaco Interiors",
-    description: "Focusing on high-standard medical and commercial interior fit-outs.",
+    name: "ALFCO Metallics",
+    description: "Dedicated manufacturing and supply of high-quality metallic structural components and assemblies.",
+    logo: "/images/alfaco group/ALFCO Metallics.png",
   },
   {
     number: "04",
-    name: "Alfaco Modular System",
-    description: "Custom modular solutions for efficient space utilization in healthcare facilities.",
+    name: "ALFCO Interiors",
+    description: "Focusing on high-standard medical and commercial interior fit-outs with innovative design solutions.",
+    logo: "/images/alfaco group/ALFCO Interior.png",
   },
   {
     number: "05",
+    name: "ALFCO Modular System",
+    description: "Custom modular solutions for efficient space utilization in healthcare facilities and beyond.",
+    logo: "/images/alfaco group/ALFCO Modular.png",
+  },
+  {
+    number: "06",
     name: "New Hail Switch Gear LLC",
-    description: "Providing specialized electrical and switchgear solutions for critical systems.",
+    description: "Providing specialized electrical and switchgear solutions for critical systems and infrastructure.",
+    logo: "/images/alfaco group/NEW HAIL.png",
   },
 ];
 
@@ -74,7 +86,7 @@ export default function PartnersSection() {
         <div className={`text-center mb-16 transition-all duration-1000 ease-out
           ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-            <span className="text-slate-800">OUR </span>
+            <span className="text-slate-800">ALFCO </span>
             <span className="text-green-600">GROUP</span>
           </h2>
           <p className="mt-6 text-lg text-slate-600 max-w-2xl mx-auto">
@@ -83,7 +95,7 @@ export default function PartnersSection() {
         </div>
 
         {/* Partners Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {partners.map((partner, index) => (
             <div
               key={partner.number}
@@ -92,23 +104,38 @@ export default function PartnersSection() {
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Card */}
-              <div className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-2 transition-all duration-300 h-full cursor-pointer">
-                {/* Number */}
-                <div className="mb-4">
-                  <span className="text-5xl sm:text-6xl font-bold bg-gradient-to-br from-green-400 to-green-600 bg-clip-text text-transparent group-hover:from-green-500 group-hover:to-green-700 transition-all duration-300">
+              <div className="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-100 h-full flex flex-col">
+                {/* Number Badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold shadow-lg">
                     {partner.number}
-                  </span>
+                  </div>
                 </div>
 
-                {/* Company Name */}
-                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-3 group-hover:text-green-600 transition-colors duration-300">
-                  {partner.name}
-                </h3>
+                {/* Logo Section */}
+                <div className="relative bg-gradient-to-br from-slate-50 to-white pt-8 pb-6 px-6 border-b border-slate-100">
+                  <div className="relative w-28 h-28 mx-auto group-hover:scale-105 transition-transform duration-500">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
 
-                {/* Description */}
-                <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 transition-colors duration-300">
-                  {partner.description}
-                </p>
+                {/* Content Section */}
+                <div className="flex-1 flex flex-col p-8 bg-white">
+                  {/* Company Name */}
+                  <h3 className="text-lg font-bold text-slate-900 mb-3 leading-tight">
+                    {partner.name}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-sm text-slate-600 leading-relaxed flex-1">
+                    {partner.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
