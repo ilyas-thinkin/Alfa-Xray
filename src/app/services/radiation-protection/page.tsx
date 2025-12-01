@@ -82,7 +82,7 @@ export default function RadiationProtectionPage() {
         title="Radiation Protection"
         subtitle="Safety Solutions"
         description="ALFA XRAY implements and installs a full line of shielding products, offering quality radiation protection to ensure that radiology and radiotherapy staff, patients, and the public are protected from harmful radiation exposure."
-        image="/images/radiology protection.jpg"
+        image="/images/Radiation F.jpg"
         services={services}
         faqs={faqs}
       />

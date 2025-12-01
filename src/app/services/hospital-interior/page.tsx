@@ -78,7 +78,7 @@ export default function HospitalInteriorPage() {
         title="Hospital Interior"
         subtitle="Healthcare Design"
         description="Transform your healthcare environment with our innovative hospital interior services. Our designs blend functionality with aesthetics, creating spaces that promote healing and comfort for patients and staff."
-        image="/images/Hospital Interior.jpg"
+        image="/images/hospital interior F.jpg"
         services={services}
         faqs={faqs}
       />

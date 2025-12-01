@@ -70,7 +70,7 @@ export default function HospitalFurniturePage() {
         title="Hospital Furniture"
         subtitle="Quality Furnishings"
         description="Elevate the functionality and aesthetics of your healthcare facility with our range of hospital furniture. Our designs prioritize both comfort and durability, offering solutions for patient rooms, waiting areas, and medical staff spaces."
-        image="/images/Hospital-Furniture.jpg"
+        image="/images/hospital furniture F.jpg"
         services={services}
         faqs={faqs}
       />

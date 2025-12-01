@@ -70,7 +70,7 @@ export default function MedicalEngineeringPage() {
         title="Medical Engineering"
         subtitle="Technical Excellence"
         description="Rely on our medical engineering expertise for state-of-the-art equipment maintenance and optimization. We ensure your medical devices operate efficiently, reducing operational interruptions while extending equipment lifespan."
-        image="/images/Xray.jpg"
+        image="/images/medical engineering F.jpg"
         services={services}
         faqs={faqs}
       />

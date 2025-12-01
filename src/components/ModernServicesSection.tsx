@@ -42,7 +42,7 @@ const services = [
   {
     title: "Medical Engineering",
     description: "Cutting-edge engineering solutions for medical equipment installation, maintenance, and optimization.",
-    image: "/images/Xray.jpg",
+    image: "/images/medical engineering F.jpg",
     href: "/services/medical-engineering",
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">

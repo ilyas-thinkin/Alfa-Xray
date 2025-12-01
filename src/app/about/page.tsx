@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import ContactFormPopup from "@/components/ContactFormPopup";
+import LogoShowcase from "@/components/LogoShowcase";
 
 const groupCompanies = [
   {
@@ -94,6 +95,24 @@ const services = [
   "Hospital Furniture",
   "Dental Cabinets",
   "CSSD",
+];
+
+const clientLogos = [
+  { name: "Abu Dhabi International Medical Services", path: "/images/clients/Abu dhabi International Medical Services.png" },
+  { name: "AL Sharq Hospital", path: "/images/clients/AL Sharq Hospital.png" },
+  { name: "EHS", path: "/images/clients/EHS.png" },
+  { name: "Emirates Health Services", path: "/images/clients/Emirates Health Services.png" },
+  { name: "Gulf & World", path: "/images/clients/Gulf&World.png" },
+  { name: "Gulfdrug", path: "/images/clients/Gulfdrug.png" },
+  { name: "Healthcare", path: "/images/clients/Heathcare.png" },
+  { name: "Nayel Medical", path: "/images/clients/Nayel Medical.png" },
+];
+
+const machineLogos = [
+  { name: "AGFA Healthcare", path: "/images/machine we deal with/AGFA Health care.png" },
+  { name: "Fujifilm", path: "/images/machine we deal with/Fujifilm.png" },
+  { name: "Genoray", path: "/images/machine we deal with/Genoray.png" },
+  { name: "Shimadzu", path: "/images/machine we deal with/Shimadzu.png" },
 ];
 
 export default function AboutPage() {
@@ -348,6 +367,24 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Our Clients Section */}
+      <LogoShowcase
+        title="OUR CLIENTS"
+        subtitle="Trusted by leading healthcare institutions across the region"
+        logos={clientLogos}
+        accentColor="green"
+        withBackground={true}
+      />
+
+      {/* Machines We Deal With Section */}
+      <LogoShowcase
+        title="MACHINES WE WORK WITH"
+        subtitle="Partnering with world-class equipment manufacturers"
+        logos={machineLogos}
+        accentColor="green"
+        withBackground={false}
+      />
 
       {/* Services Overview */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">

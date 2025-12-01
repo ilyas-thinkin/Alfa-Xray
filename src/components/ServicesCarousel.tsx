@@ -8,7 +8,7 @@ const services = [
   {
     title: "Radiation Protection",
     description: "ALFA AL HAYAT implements and installs a full line of shielding products thus offering quality line of radiation protection to ensure that radiology and radiotherapy staff.",
-    image: "/images/radiology protection.jpg",
+    image: "/images/Radiation F.jpg", 
     href: "/services/radiation-protection",
   },
   {
@@ -20,25 +20,25 @@ const services = [
   {
     title: "Hospital Interior",
     description: "Transform your healthcare environment with our innovative hospital interior services.",
-    image: "/images/Hospital Interior.jpg",
+    image: "/images/hospital interior F.jpg",
     href: "/services/hospital-interior",
   },
   {
     title: "Medical Engineering",
     description: "Rely on our medical engineering expertise for state-of-the-art equipment maintenance and optimization.",
-    image: "/images/Xray.jpg",
+    image: "/images/medical engineering F.jpg",
     href: "/services/medical-engineering",
   },
   {
     title: "Hospital Furniture",
     description: "Elevate the functionality and aesthetics of your healthcare facility with our range of hospital furniture.",
-    image: "/images/Hospital-Furniture.jpg",
+    image: "/images/hospital furniture F.jpg",
     href: "/services/hospital-furniture",
   },
   {
     title: "Dental Cabinets",
     description: "Enhance the efficiency of your dental practice with our specialized dental cabinets.",
-    image: "/images/Dental Cabinets.jpg",
+    image: "/images/dental cabinets F.jpg",
     href: "/services/dental-cabinets",
   },
   {

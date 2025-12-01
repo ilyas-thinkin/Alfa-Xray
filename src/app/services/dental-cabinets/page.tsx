@@ -70,7 +70,7 @@ export default function DentalCabinetsPage() {
         title="Dental Cabinets"
         subtitle="Practice Solutions"
         description="Enhance the efficiency of your dental practice with our specialized dental cabinets. Designed for optimal organization and easy access, our cabinets provide a seamless workflow in your dental clinic."
-        image="/images/Dental Cabinets.jpg"
+        image="/images/dental cabinets F.jpg"
         services={services}
         faqs={faqs}
       />
