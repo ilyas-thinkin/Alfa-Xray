@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6">
               Privacy <span className="text-green-500">Policy</span>
             </h1>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-4xl mx-auto">
               Your privacy is important to us. This policy outlines how we collect, use, and protect your information.
             </p>
           </div>
