@@ -151,7 +151,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="group flex items-center gap-3 text-slate-400 hover:text-green-400 transition-colors duration-300">
+                <Link href="/privacy-policy" className="group flex items-center gap-3 text-slate-400 hover:text-green-400 transition-colors duration-300">
                   <svg className="w-4 h-4 text-green-500 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

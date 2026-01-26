@@ -121,8 +121,8 @@ export default function ModernServicesSection() {
             <span className="text-slate-800">Our </span>
             <span className="text-slate-800">Services</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliqua ex ea commodo consequat Duis aute irure.
+          <p className="mt-4 text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            Comprehensive healthcare solutions tailored to your needs. From radiation protection to medical engineering, we deliver excellence in every project with precision, safety, and innovation at the core of everything we do.
           </p>
         </div>
 
