@@ -212,7 +212,7 @@ export default function ServicePageTemplate({
             {services.map((service, index) => (
               <div
                 key={service.title}
-                className={`group relative p-6 rounded-3xl bg-white border border-slate-200/50 shadow-lg hover:shadow-xl hover:border-green-200 transition-all duration-500 hover:-translate-y-2 ${
+                className={`group relative p-6 rounded-3xl bg-white border border-slate-200/50 shadow-lg hover:shadow-xl hover:border-green-200 transition-all duration-500 hover:-translate-y-2 overflow-hidden ${
                   isServicesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

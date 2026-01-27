@@ -3,36 +3,32 @@ import Footer from "@/components/Footer";
 
 const services = [
   {
-    title: "Diagnostic Imaging Equipment",
-    description: "Expert maintenance and optimization of X-ray, CT, MRI, and ultrasound systems.",
-  },
-  {
-    title: "Patient Monitoring Devices",
-    description: "Service and calibration of vital signs monitors and patient tracking systems.",
-  },
-  {
-    title: "Surgical Instruments",
-    description: "Maintenance and repair of surgical equipment and operating room systems.",
-  },
-  {
     title: "Equipment Calibration",
     description: "Precision calibration ensuring accuracy and regulatory compliance.",
   },
   {
-    title: "Preventive Maintenance",
-    description: "Scheduled maintenance programs extending equipment lifespan and reliability.",
+    title: "Negative/Positive Pressure",
+    description: "Specialized pressure control systems for infection control and containment areas.",
   },
   {
-    title: "24/7 Emergency Repairs",
-    description: "Round-the-clock emergency support minimizing critical equipment downtime.",
+    title: "OT Laminar Flow",
+    description: "Advanced laminar airflow systems for sterile operating theatre environments.",
   },
   {
-    title: "Performance Optimization",
-    description: "Fine-tuning equipment settings for optimal performance and efficiency.",
+    title: "Hermetic Doors",
+    description: "Airtight door solutions for controlled environments and clean rooms.",
   },
   {
-    title: "Compliance Testing",
-    description: "Regular testing ensuring equipment meets safety and regulatory standards.",
+    title: "Isolation Room",
+    description: "Complete isolation room engineering for patient safety and infection prevention.",
+  },
+  {
+    title: "Clean Room",
+    description: "Design and implementation of clean room facilities meeting healthcare standards.",
+  },
+  {
+    title: "Medical Gas",
+    description: "Medical gas pipeline systems installation, maintenance, and compliance testing.",
   },
 ];
 
