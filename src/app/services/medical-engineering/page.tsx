@@ -34,28 +34,28 @@ const services = [
 
 const faqs = [
   {
-    question: "What types of medical equipment do you service?",
-    answer: "We service a wide range of medical equipment including diagnostic imaging equipment (X-ray, CT, MRI), patient monitoring devices, surgical instruments, laboratory equipment, and various other medical devices across diverse healthcare settings.",
+    question: "What is equipment calibration and why is it important?",
+    answer: "Equipment calibration ensures that medical devices measure and operate with precision according to regulatory standards. Regular calibration maintains accuracy, ensures patient safety, and keeps your facility compliant with healthcare regulations.",
   },
   {
-    question: "How do you approach equipment maintenance?",
-    answer: "We develop customized maintenance schedules following manufacturer recommendations and industry standards, tailored to each facility's specific needs. Our approach includes preventive maintenance, regular inspections, and performance optimization.",
+    question: "What is the difference between negative and positive pressure rooms?",
+    answer: "Negative pressure rooms prevent airborne contaminants from escaping by drawing air inward, ideal for isolating infectious patients. Positive pressure rooms push filtered air outward to protect immunocompromised patients from external contaminants.",
   },
   {
-    question: "Do you provide calibration services?",
-    answer: "Yes, our engineers perform comprehensive calibration and performance optimization services to ensure equipment accuracy and regulatory compliance. We maintain detailed records and provide calibration certificates.",
+    question: "What is OT laminar flow and how does it work?",
+    answer: "OT laminar flow systems deliver a continuous stream of filtered air in a uniform direction across the operating theatre. This minimizes airborne particles and bacteria, significantly reducing the risk of surgical site infections.",
   },
   {
-    question: "What emergency support do you offer?",
-    answer: "We provide 24/7 emergency repair services to minimize downtime for critical equipment failures. Our rapid response team is available around the clock to address urgent equipment issues and restore operations quickly.",
+    question: "What are hermetic doors used for in healthcare facilities?",
+    answer: "Hermetic doors create airtight seals essential for maintaining pressure differentials in clean rooms, isolation rooms, and operating theatres. They prevent air leakage and cross-contamination between controlled and non-controlled areas.",
   },
   {
-    question: "What qualifications do your engineers have?",
-    answer: "Our engineers hold biomedical engineering degrees and industry certifications with ongoing training in medical technology advancements. They are skilled in the latest diagnostic and repair techniques for modern medical equipment.",
+    question: "What standards do your clean rooms meet?",
+    answer: "Our clean room installations comply with ISO 14644 standards and healthcare-specific guidelines. We design and implement clean rooms for various classifications based on your facility's requirements, from pharmaceutical preparation to surgical environments.",
   },
   {
-    question: "Can you help with equipment upgrades and replacements?",
-    answer: "Yes, we provide consultation on equipment upgrades and can assist with the planning and implementation of new equipment installations, ensuring seamless integration with your existing systems.",
+    question: "What medical gas systems do you install and maintain?",
+    answer: "We provide complete medical gas pipeline systems including oxygen, nitrous oxide, medical air, and vacuum systems. Our services cover installation, testing, certification, and ongoing maintenance to ensure safe and reliable gas delivery throughout your facility.",
   },
 ];
 
