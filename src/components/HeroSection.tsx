@@ -13,8 +13,8 @@ export default function HeroSection() {
       {/* Background Image Wrapper */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/HeroBg.png"
-          alt="Hero Background"
+          src="/images/hero-custom.jpeg"
+          alt="Medical imaging room with radiation protection equipment"
           fill
           priority
           className="object-cover object-center"
