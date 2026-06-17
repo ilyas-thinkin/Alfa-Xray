@@ -21,8 +21,8 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* White Transparent Overlay */}
-      <div className="absolute inset-0 bg-white/50 -z-5"></div>
+      {/* White overlay — higher opacity for text contrast on bright hero image */}
+      <div className="absolute inset-0 bg-white/70 -z-5"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center text-white mt-16 sm:mt-24 lg:mt-32 px-2">
